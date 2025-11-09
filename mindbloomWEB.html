@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mindbloom — Support for older adults</title>
+  <style>
+    :root{
+      --bg:#fff8fb;
+      --card:#ffffff;
+      --accent:#c75c8a;
+      --accent-2:#e79abf;
+      --muted:#6a4c59;
+      --danger:#e57b84;
+      --radius:14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#ffe6ef);color:var(--muted)}
+    .wrap{max-width:1100px;margin:34px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:92px;height:92px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:26px;box-shadow:0 6px 18px rgba(199,92,138,.14)}
+    h1{margin:0;font-size:34px;color:var(--accent);line-height:1}
+    p.lead{margin:6px 0 0;font-size:18px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:22px}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(100,50,80,.06)}
+
+    .intro{padding:26px;border-radius:12px}
+    .cta-row{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:12px;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:18px}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{border:2px solid var(--accent);color:var(--accent);background:transparent}
+    .btn-large{padding:16px 22px;font-size:20px}
+
+    .mock-chat{height:320px;display:flex;flex-direction:column;gap:10px}
+    .message{max-width:78%;padding:10px 14px;border-radius:12px;line-height:1.4}
+    .msg-me{align-self:flex-end;background:linear-gradient(90deg,#ffeaf3,#ffd3e3);color:#7a405d}
+    .msg-other{align-self:flex-start;background:#fdf1f6;color:#5a3649}
+
+    .panel{padding:18px}
+    .panel h3{margin-top:0}
+    .small-muted{font-size:14px;color:#9a6f83}
+
+    .schedule{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+    .event{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fff1f7)}
+    .date{min-width:86px;padding:8px;border-radius:8px;background:#ffe5f1;text-align:center;font-weight:700;color:var(--accent)}
+
+    .topics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .topic h4{margin:0 0 8px;font-size:20px;color:var(--accent)}
+    .topic p{margin:0;font-size:15px}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:transparent;color:#6a4c59;display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .topics{grid-template-columns:1fr}
+    }
+    a:focus{outline:3px solid #f8cce2;outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">MB</div>
+      <div>
+        <h1>Mindbloom</h1>
+        <p class="lead">Visual support and resources for older adults facing loneliness, depression, and anxiety</p>
+      </div>
+    </header>
+
+    <main class="hero">
+      <section class="card intro" aria-labelledby="introTitle">
+        <h2 id="introTitle" style="margin:0;font-size:22px;color:var(--accent);">Welcome to Mindbloom</h2>
+        <p style="margin-top:10px;font-size:17px;line-height:1.5">Designed with older adults in mind: large type, soft colors, and clear navigation. Here you’ll find information, in-person activities, and ways to connect with professionals or supportive groups.</p>
+
+        <div class="cta-row" role="navigation" aria-label="Main actions">
+          <a href="#" class="btn btn-primary btn-large" aria-label="Chat with a therapist">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H8l-5 3V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Chat with a therapist
+          </a>
+
+          <a href="#" class="btn btn-ghost btn-large" aria-label="Join group chat">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Group chat: find peers
+          </a>
+        </div>
+
+        <div style="margin-top:20px">
+          <h3 style="margin:0 0 10px 0;color:var(--accent)">Chat (visual example)</h3>
+          <div class="card mock-chat" aria-hidden="true">
+            <div class="message msg-other">Hi, I’m Mary. I’m looking for walking companions on Tuesdays.</div>
+            <div class="message msg-me">Hi Mary! I’m Tony, I’d love to join.</div>
+            <div class="message msg-other">Do you prefer outdoor activities or a calm chat?</div>
+            <div class="message msg-me">Both. Talking with people my age really helps.</div>
+            <div style="margin-top:auto;color:#9c6f83;font-size:13px; padding-top:6px;">*This is a visual example of the group chat.</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card panel" aria-labelledby="panelTitle">
+        <h3 id="panelTitle">Upcoming in-person sessions</h3>
+        <p class="small-muted">Free and open meetings — tailored for older adults. Reserve by phone or directly at the center.</p>
+
+        <div class="schedule" role="list">
+          <div class="event" role="listitem">
+            <div class="date">Nov 10<br><small style="font-weight:600">11:00</small></div>
+            <div>
+              <strong>Workshop: Living with loneliness</strong>
+              <div style="font-size:13px;color:#805567">El Olmo Community Center — Room 2</div>
+            </div>
+          </div>
+
+          <div class="event" role="listitem">
+            <div class="date">Nov 18<br><small style="font-weight:600">16:00</small></div>
+            <div>
+              <strong>Talk: Understanding depression in seniors</strong>
+              <div style="font-size:13px;color:#805567">Municipal Library — Room 1</div>
+            </div>
+          </div>
+
+          <div class="event" role="listitem">
+            <div class="date">Nov 25<br><small style="font-weight:600">10:30</small></div>
+            <div>
+              <strong>Group: Simple techniques for anxiety</strong>
+              <div style="font-size:13px;color:#805567">La Paz Senior Center</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:12px;font-size:14px">Information phone: <strong>900 123 456</strong></p>
+      </aside>
+    </main>
+
+    <section class="card" style="margin-top:18px; padding:22px">
+      <h2 style="margin:0 0 10px;color:var(--accent)">Information about the three areas</h2>
+      <div class="topics" role="list">
+        <article class="topic card" role="listitem" style="padding:16px">
+          <h4>Loneliness</h4>
+          <p>Loneliness doesn’t always mean being alone: it’s the feeling of lacking meaningful companionship. Among older adults, it can arise due to loss of loved ones, reduced mobility, or retirement.</p>
+          <p style="margin-top:8px;font-size:14px"><strong>Suggestions:</strong> join local groups, schedule regular calls with family, participate in volunteer activities.</p>
+        </article>
+
+        <article class="topic card" role="listitem" style="padding:16px">
+          <h4>Depression</h4>
+          <p>Depression includes persistent sadness, loss of interest, changes in appetite and sleep, and lack of energy. In older age, it can sometimes be mistaken for normal aging.</p>
+          <p style="margin-top:8px;font-size:14px"><strong>When to seek help:</strong> if symptoms last for weeks or affect daily life. Professionals can offer tailored therapy and, when needed, safe medication.</p>
+        </article>
+
+        <article class="topic card" role="listitem" style="padding:16px">
+          <h4>Anxiety</h4>
+          <p>Anxiety can appear as restlessness, frequent worries, muscle tension, or trouble sleeping. Among older adults, concerns about health and independence are common.</p>
+          <p style="margin-top:8px;font-size:14px"><strong>Helpful techniques:</strong> slow breathing exercises, daily routines, social contact, and professional support when necessary.</p>
+        </article>
+      </div>
+
+      <p style="margin-top:16px;font-size:15px;color:#8c6274">If you suspect that you or a loved one is experiencing a serious issue, consult a doctor or mental health professional. This page is a visual model and does not replace professional care.</p>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Mindbloom</strong> — Visual support for older adults
+      </div>
+      <div style="font-size:14px;color:#70485a">Contact: <a href="#" style="color:var(--accent);text-decoration:underline">info@mindbloom.org</a></div>
+    </footer>
+  </div>
+</body>
+</html>
